@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashakarma Bhandar — পূজার সামগ্রী</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#E8651A">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DK Bhandar">
+  <link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --saffron: #E8651A;
+  --saffron-light: #F5A623;
+  --gold: #C8950A;
+  --gold-light: #F0C040;
+  --crimson: #9B1B1B;
+  --cream: #FDF6E3;
+  --warm-white: #FFFDF5;
+  --dark-brown: #2C1A0E;
+  --mid-brown: #5C3317;
+  --text-body: #3D2314;
+  --border: #D4A853;
+  --card-bg: #FFFBF0;
+  --r: 12px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-body);
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 10% 0%, #F5A62318 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 100%, #9B1B1B10 0%, transparent 50%);
+}
+
+/* ── TOP BAR ── */
+.topbar {
+  background: var(--crimson);
+  color: #FFE9A0;
+  text-align: center;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+}
+.topbar span { color: var(--gold-light); font-weight: 600; }
+
+/* ── NAV ── */
+nav {
+  background: var(--dark-brown);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 72px;
+  position: sticky; top: 0; z-index: 100;
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 4px 24px rgba(44,26,14,0.3);
+}
+
+.logo-wrap { display:flex; flex-direction:column; line-height:1; }
+.logo-bn {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 1.4rem;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+.logo-en {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.75rem;
+  color: #c49a4a;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links a {
+  color: #c4a46a; text-decoration:none; font-size:0.9rem;
+  font-weight:500; transition:color .2s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+
+.cart-btn {
+  display:flex; align-items:center; gap:0.5rem;
+  background: var(--saffron);
+  color: #fff; border:none; border-radius:50px;
+  padding: 0.55rem 1.4rem;
+  font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.92rem;
+  cursor:pointer; transition:transform .15s, background .2s;
+  position:relative;
+}
+.cart-btn:hover { background: var(--saffron-light); transform:scale(1.04); }
+.cart-count {
+  position:absolute; top:-7px; right:-7px;
+  background:var(--crimson); color:#fff;
+  border-radius:50%; width:20px; height:20px;
+  font-size:0.68rem; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform:scale(0); transition:all .2s;
+}
+.cart-count.show { opacity:1; transform:scale(1); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--dark-brown) 0%, #4a1e08 60%, #6b2e12 100%);
+  padding: 5rem 2.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:2rem; flex-wrap:wrap;
+  position:relative; overflow:hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8950A' fill-opacity='0.07'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.hero::after {
+  content:'ॐ';
+  position:absolute; right:3rem; top:50%;
+  transform:translateY(-50%);
+  font-family:'Tiro Devanagari Sanskrit',serif;
+  font-size:14rem; color:#ffffff06;
+  pointer-events:none;
+  animation: slowspin 30s linear infinite;
+}
+@keyframes slowspin { to { transform:translateY(-50%) rotate(360deg); } }
+
+.hero-text { max-width:580px; position:relative; z-index:1; }
+.hero-tag {
+  display:inline-block;
+  background: rgba(200,149,10,0.2);
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-size:0.75rem; font-weight:600; letter-spacing:3px;
+  text-transform:uppercase; padding:0.35rem 1rem;
+  border-radius:50px; margin-bottom:1.3rem;
+}
+.hero h1 {
+  font-family:'Crimson Pro', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight:700; color:#fff;
+  line-height:1.1; margin-bottom:0.6rem;
+}
+.hero h1 em { font-style:italic; color:var(--gold-light); }
+.hero-bn {
+  font-family:'Tiro Devanagari Sanskrit', serif;
+  font-size:1.4rem; color:#c49a4a;
+  margin-bottom:1rem; display:block;
+}
+.hero p { color:#a88060; line-height:1.8; margin-bottom:2rem; font-size:1rem; }
+
+.hero-cta {
+  display:inline-flex; align-items:center; gap:0.6rem;
+  background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
+  color:#fff; border:none; border-radius:50px;
+  padding:0.9rem 2.2rem; font-size:1rem; font-weight:600;
+  cursor:pointer; transition:transform .2s, box-shadow .2s;
+  font-family:'DM Sans',sans-serif;
+  box-shadow: 0 4px 20px rgba(232,101,26,0.4);
+}
+.hero-cta:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(232,101,26,0.5); }
+
+.hero-icons {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:1rem; position:relative; z-index:1;
+}
+.hero-icon-card {
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(200,149,10,0.3);
+  border-radius:var(--r); padding:1.2rem;
+  text-align:center; backdrop-filter:blur(4px);
+  animation: floatCard 4s ease-in-out infinite;
+}
+.hero-icon-card:nth-child(2) { animation-delay:.5s; }
+.hero-icon-card:nth-child(3) { animation-delay:1s; }
+.hero-icon-card:nth-child(4) { animation-delay:1.5s; }
+@keyframes floatCard { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.hero-icon-card .icon { font-size:2.8rem; display:block; margin-bottom:0.4rem; }
+.hero-icon-card span { color:#c49a4a; font-size:0.78rem; font-weight:500; }
+
+/* ── CEREMONY FILTERS ── */
+.section { padding:3rem 2.5rem; }
+.section-title {
+  font-family:'Crimson Pro', serif;
+  font-size:2rem; font-weight:700;
+  color:var(--dark-brown);
+  margin-bottom:0.25rem;
+}
+.section-sub { color:#9a6a3a; font-size:0.9rem; margin-bottom:1.8rem; }
+
+.ceremony-filters {
+  display:flex; gap:0.8rem; flex-wrap:wrap; margin-bottom:2.5rem;
+}
+.filter-btn {
+  display:flex; align-items:center; gap:0.5rem;
+  padding:0.6rem 1.2rem;
+  border-radius:50px;
+  border:2px solid var(--border);
+  background:transparent;
+  color:var(--mid-brown); font-weight:500; font-size:0.88rem;
+  cursor:pointer; transition:all .2s;
+  font-family:'DM Sans',sans-serif;
+}
+.filter-btn:hover { border-color:var(--saffron); color:var(--saffron); }
+.filter-btn.active {
+  background:var(--saffron); border-color:var(--saffron);
+  color:#fff; box-shadow:0 4px 14px rgba(232,101,26,0.3);
+}
+
+/* ── DIVIDER ── */
+.divider {
+  display:flex; align-items:center; gap:1rem;
+  margin:0 2.5rem 2rem;
+}
+.divider-line { flex:1; height:1px; background:linear-gradient(to right, transparent, var(--border), transparent); }
+.divider-icon { color:var(--gold); font-size:1.2rem; }
+
+/* ── PRODUCT GRID ── */
+.products-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(240px,1fr));
+  gap:1.5rem;
+}
+
+.product-card {
+  background:var(--card-bg);
+  border-radius:var(--r);
+  border:1.5px solid #E8D5A0;
+  overflow:hidden;
+  transition:transform .22s, box-shadow .22s;
+  position:relative;
+}
+.product-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 16px 40px rgba(44,26,14,0.15);
+  border-color:var(--saffron);
+}
+
+.product-img {
+  width:100%; height:160px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:4.5rem;
+  position:relative;
+}
+
+.badge {
+  position:absolute; top:10px; right:10px;
+  font-size:0.68rem; font-weight:700;
+  padding:0.25rem 0.6rem; border-radius:50px;
+  text-transform:uppercase; letter-spacing:0.5px;
+}
+.badge-sale { background:var(--crimson); color:#fff; }
+.badge-new { background:var(--gold); color:var(--dark-brown); }
+.badge-popular { background:var(--saffron); color:#fff; }
+
+.ceremony-tag {
+  position:absolute; bottom:8px; left:8px;
+  background:rgba(44,26,14,0.7);
+  color:#F0C040; font-size:0.65rem; font-weight:600;
+  padding:0.2rem 0.6rem; border-radius:50px;
+  backdrop-filter:blur(4px);
+}
+
+.product-body { padding:1rem 1.1rem 1.2rem; }
+.product-cat {
+  font-size:0.7rem; font-weight:600; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--saffron);
+  margin-bottom:0.3rem;
+}
+.product-name {
+  font-family:'Crimson Pro', serif;
+  font-size:1.15rem; font-weight:700;
+  color:var(--dark-brown); margin-bottom:0.15rem; line-height:1.25;
+}
+.product-name-bn {
+  font-family:'Tiro Devanagari Sanskrit', serif;
+  font-size:0.85rem; color:#9a6a3a; margin-bottom:0.5rem;
+}
+.product-desc { font-size:0.8rem; color:#7a5030; line-height:1.5; margin-bottom:0.9rem; }
+
+.product-footer { display:flex; align-items:center; justify-content:space-between; }
+.price {
+  font-family:'Crimson Pro', serif;
+  font-size:1.35rem; font-weight:700; color:var(--crimson);
+}
+.price-old {
+  font-size:0.82rem; color:#bbb;
+  text-decoration:line-through; margin-left:0.3rem;
+  font-weight:400;
+}
+.add-btn {
+  background:var(--dark-brown); color:#F0C040;
+  border:none; border-radius:50px;
+  padding:0.5rem 1.1rem;
+  font-size:0.82rem; font-weight:600;
+  cursor:pointer; transition:all .18s;
+  font-family:'DM Sans',sans-serif;
+}
+.add-btn:hover { background:var(--saffron); color:#fff; transform:scale(1.06); }
+.add-btn.added { background:var(--gold); color:var(--dark-brown); }
+
+/* ── PROMO STRIP ── */
+.promo-strip {
+  margin:0 2.5rem 3rem;
+  background:linear-gradient(135deg,var(--crimson),#7a1010);
+  border-radius:var(--r);
+  padding:2.5rem 3rem;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:1.5rem;
+  position:relative; overflow:hidden;
+  border:1.5px solid #b03030;
+}
+.promo-strip::before {
+  content:'🪔';
+  position:absolute; right:2rem; top:50%;
+  transform:translateY(-50%); font-size:5rem; opacity:0.15;
+}
+.promo-strip h2 {
+  font-family:'Crimson Pro', serif;
+  font-size:1.7rem; font-weight:700; color:#fff;
+}
+.promo-strip p { color:#ffb8a0; margin-top:0.3rem; font-size:0.92rem; }
+.promo-code {
+  background:var(--gold-light); color:var(--dark-brown);
+  font-family:'Crimson Pro', serif;
+  font-size:1.2rem; font-weight:700;
+  padding:0.7rem 1.8rem; border-radius:10px;
+  letter-spacing:3px;
+}
+
+/* ── TRUST STRIP ── */
+.trust-strip {
+  display:flex; justify-content:center; flex-wrap:wrap;
+  gap:2rem; padding:2rem 2.5rem;
+  border-top:1px solid #E8D5A0;
+  border-bottom:1px solid #E8D5A0;
+  background:rgba(255,251,240,0.6);
+  margin-bottom:1rem;
+}
+.trust-item {
+  display:flex; align-items:center; gap:0.7rem;
+  color:var(--mid-brown); font-size:0.88rem; font-weight:500;
+}
+.trust-item .t-icon { font-size:1.5rem; }
+
+/* ── CART DRAWER ── */
+.overlay {
+  position:fixed; inset:0;
+  background:rgba(44,26,14,0.55);
+  z-index:200; opacity:0; pointer-events:none;
+  transition:opacity .25s;
+}
+.overlay.open { opacity:1; pointer-events:all; }
+
+.cart-drawer {
+  position:fixed; right:0; top:0; bottom:0;
+  width:430px; max-width:95vw;
+  background:var(--warm-white);
+  z-index:201;
+  transform:translateX(100%);
+  transition:transform .3s cubic-bezier(.4,0,.2,1);
+  display:flex; flex-direction:column;
+  border-left:3px solid var(--gold);
+}
+.cart-drawer.open { transform:translateX(0); }
+
+.cart-header {
+  background:var(--dark-brown);
+  padding:1.4rem 1.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.cart-header h2 {
+  font-family:'Crimson Pro', serif;
+  font-size:1.3rem; font-weight:700; color:var(--gold-light);
+}
+.close-btn {
+  background:rgba(255,255,255,0.15); color:#fff;
+  border:none; border-radius:50%;
+  width:34px; height:34px;
+  font-size:1rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .2s;
+}
+.close-btn:hover { background:var(--saffron); }
+
+.cart-items { flex:1; overflow-y:auto; padding:1rem 1.5rem; }
+.cart-empty {
+  text-align:center; padding:3rem 1rem; color:#bbb;
+}
+.cart-empty .empty-icon { font-size:3.5rem; display:block; margin-bottom:1rem; }
+.cart-empty p { color:#9a7a5a; font-size:0.95rem; }
+
+.cart-item {
+  display:flex; align-items:center; gap:1rem;
+  padding:1rem 0; border-bottom:1.5px solid #F0E0B0;
+  animation:slideIn .2s ease;
+}
+@keyframes slideIn { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:none} }
+.cart-item-icon { font-size:2.2rem; flex-shrink:0; }
+.cart-item-info { flex:1; }
+.cart-item-name { font-weight:600; font-size:0.93rem; color:var(--dark-brown); }
+.cart-item-price { color:#9a7a5a; font-size:0.82rem; margin-top:0.1rem; }
+.qty-controls { display:flex; align-items:center; gap:0.5rem; }
+.qty-btn {
+  background:var(--cream); border:1.5px solid var(--border);
+  border-radius:50%; width:28px; height:28px;
+  font-size:1rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .15s; color:var(--dark-brown);
+}
+.qty-btn:hover { background:var(--gold-light); }
+.qty-num { font-weight:700; font-size:0.95rem; min-width:18px; text-align:center; }
+.remove-btn {
+  background:none; border:none; color:#ccc;
+  cursor:pointer; font-size:1rem; padding:0.2rem;
+  transition:color .15s;
+}
+.remove-btn:hover { color:var(--crimson); }
+
+.cart-footer {
+  padding:1.4rem 1.5rem;
+  border-top:2px solid #F0E0B0;
+  background:rgba(255,253,245,0.95);
+}
+.cart-subtotal {
+  display:flex; justify-content:space-between;
+  font-size:0.9rem; color:#7a5a3a; margin-bottom:0.4rem;
+}
+.cart-total {
+  display:flex; justify-content:space-between;
+  font-family:'Crimson Pro', serif;
+  font-size:1.4rem; font-weight:700; color:var(--dark-brown);
+  margin:0.8rem 0 1.2rem;
+  padding-top:0.8rem; border-top:1.5px dashed var(--border);
+}
+.checkout-btn {
+  width:100%;
+  background:linear-gradient(135deg, var(--saffron), var(--saffron-light));
+  color:#fff; border:none; border-radius:50px;
+  padding:1rem; font-family:'Crimson Pro', serif;
+  font-size:1.1rem; font-weight:700;
+  cursor:pointer; transition:transform .15s, box-shadow .2s;
+  box-shadow:0 4px 16px rgba(232,101,26,0.35);
+  letter-spacing:0.5px;
+}
+.checkout-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(232,101,26,0.45); }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--dark-brown);
+  color:#7a5a3a; text-align:center;
+  padding:2.5rem; margin-top:2rem;
+  border-top:3px solid var(--gold);
+}
+footer .f-title {
+  font-family:'Tiro Devanagari Sanskrit', serif;
+  font-size:1.2rem; color:var(--gold-light); margin-bottom:0.5rem;
+}
+footer p { font-size:0.82rem; }
+footer span { color:var(--saffron-light); }
+
+/* ── HIDDEN ── */
+.product-card.hidden { display:none; }
+
+@media(max-width:640px){
+  nav { padding:0 1rem; }
+  .hero { padding:3rem 1.2rem; }
+  .hero-icons { display:none; }
+  .section { padding:2rem 1.2rem; }
+  .promo-strip, .divider { margin-left:1.2rem; margin-right:1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- PWA Install Banner -->
+<div id="installBanner" style="display:none; align-items:center; justify-content:space-between; background:#2C1A0E; border-bottom:2px solid #C8950A; padding:0.6rem 1.2rem; gap:1rem; flex-wrap:wrap;">
+  <div style="display:flex; align-items:center; gap:0.7rem;">
+    <span style="font-size:1.5rem;">🪔</span>
+    <div>
+      <div style="color:#F0C040; font-weight:600; font-size:0.9rem; font-family:'Crimson Pro',serif;">Install Dashakarma Bhandar</div>
+      <div style="color:#9a7a5a; font-size:0.75rem;">Add to your home screen for quick access</div>
+    </div>
+  </div>
+  <div style="display:flex; gap:0.6rem;">
+    <button onclick="installApp()" style="background:#E8651A; color:#fff; border:none; border-radius:50px; padding:0.4rem 1rem; font-weight:600; font-size:0.85rem; cursor:pointer;">Install App</button>
+    <button onclick="document.getElementById('installBanner').style.display='none'" style="background:transparent; color:#9a7a5a; border:1px solid #5C3317; border-radius:50px; padding:0.4rem 0.8rem; font-size:0.85rem; cursor:pointer;">Not now</button>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">🚚 Free delivery on orders above <span>₹999</span> &nbsp;|&nbsp; 🪔 Authentic Bengali Puja Samagri</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-wrap">
+    <span class="logo-bn">দশকর্ম ভাণ্ডার</span>
+    <span class="logo-en">Dashakarma Bhandar</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">Ceremonies</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="cart-btn" onclick="toggleCart()">
+    🛒 Cart
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-tag">🪔 Authentic · Traditional · Trusted</span>
+    <h1>Sacred items for every <em>auspicious</em> occasion</h1>
+    <span class="hero-bn">পূজার জন্য সেরা সামগ্রী</span>
+    <p>From Annaprashana to Vivah, from Satyanarayana Puja to Shraddha — everything you need for your sacred rituals, sourced with devotion.</p>
+    <button class="hero-cta" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
+      🛕 Browse Samagri
+    </button>
+  </div>
+  <div class="hero-icons">
+    <div class="hero-icon-card"><span class="icon">🪔</span><span>Diyas & Lamps</span></div>
+    <div class="hero-icon-card"><span class="icon">🌸</span><span>Puja Flowers</span></div>
+    <div class="hero-icon-card"><span class="icon">🧧</span><span>Sacred Threads</span></div>
+    <div class="hero-icon-card"><span class="icon">🫙</span><span>Ghee & Oils</span></div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><span class="t-icon">✅</span> 100% Authentic Items</div>
+  <div class="trust-item"><span class="t-icon">🚚</span> Same-Day Delivery in Kolkata</div>
+  <div class="trust-item"><span class="t-icon">🙏</span> Brahmin-Approved Samagri</div>
+  <div class="trust-item"><span class="t-icon">📦</span> Ceremony Kits Available</div>
+</div>
+
+<!-- SHOP SECTION -->
+<section class="section" id="shop">
+  <h2 class="section-title">Shop by Ceremony</h2>
+  <p class="section-sub">Select a ceremony to filter relevant puja items</p>
+  <div class="ceremony-filters">
+    <button class="filter-btn active" onclick="filterCat('all',this)">🛕 All Items</button>
+    <button class="filter-btn" onclick="filterCat('durga',this)">🪷 Durga Puja</button>
+    <button class="filter-btn" onclick="filterCat('satyanarayan',this)">🐚 Satyanarayana</button>
+    <button class="filter-btn" onclick="filterCat('upanayana',this)">🧵 Upanayana</button>
+    <button class="filter-btn" onclick="filterCat('vivah',this)">💍 Vivah</button>
+    <button class="filter-btn" onclick="filterCat('shraddha',this)">🙏 Shraddha</button>
+    <button class="filter-btn" onclick="filterCat('birthday',this)">🎂 Birthday Puja</button>
+    <button class="filter-btn" onclick="filterCat('annaprashana',this)">🍚 Annaprashana</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+
+    <!-- DURGA PUJA -->
+    <div class="product-card" data-cat="durga">
+      <div class="product-img" style="background:#FFF5E0">
+        <span class="badge badge-popular">Popular</span>
+        🪔
+        <span class="ceremony-tag">Durga Puja</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Diyas & Lamps</div>
+        <div class="product-name">Earthen Diya Set</div>
+        <div class="product-name-bn">মাটির প্রদীপ সেট</div>
+        <div class="product-desc">Pack of 50 hand-crafted terracotta diyas, ideal for Sandhi Puja.</div>
+        <div class="product-footer">
+          <div><span class="price">₹79</span><span class="price-old">₹99</span></div>
+          <button class="add-btn" onclick="addToCart(this,'Earthen Diya Set (50pc)','🪔',79)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="durga satyanarayan">
+      <div class="product-img" style="background:#FFF0F5">
+        <span class="badge badge-new">New</span>
+        🌸
+        <span class="ceremony-tag">Multi-Puja</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Flowers & Garlands</div>
+        <div class="product-name">Lotus Flower Bundle</div>
+        <div class="product-name-bn">পদ্মফুলের গুচ্ছ</div>
+        <div class="product-desc">12 fresh lotus flowers, essential for Durga & Lakshmi puja.</div>
+        <div class="product-footer">
+          <span class="price">₹149</span>
+          <button class="add-btn" onclick="addToCart(this,'Lotus Flower Bundle','🌸',149)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="durga satyanarayan birthday">
+      <div class="product-img" style="background:#FFFBE0">
+        🧡
+        <span class="ceremony-tag">Multi-Puja</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Incense</div>
+        <div class="product-name">Dhuno (Resin Incense)</div>
+        <div class="product-name-bn">ধুনো</div>
+        <div class="product-desc">Pure sal tree resin, 100g. Traditional Bengali puja dhuno.</div>
+        <div class="product-footer">
+          <div><span class="price">₹55</span><span class="price-old">₹70</span></div>
+          <button class="add-btn" onclick="addToCart(this,'Dhuno (Resin Incense)','🧡',55)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SATYANARAYAN -->
+    <div class="product-card" data-cat="satyanarayan">
+      <div class="product-img" style="background:#FFF5F0">
+        <span class="badge badge-popular">Popular</span>
+        🐚
+        <span class="ceremony-tag">Satyanarayana</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Ritual Vessels</div>
+        <div class="product-name">Shankh (Sacred Conch)</div>
+        <div class="product-name-bn">শঙ্খ</div>
+        <div class="product-desc">Natural blowing conch, polished finish. Auspicious for all pujas.</div>
+        <div class="product-footer">
+          <span class="price">₹299</span>
+          <button class="add-btn" onclick="addToCart(this,'Shankh (Sacred Conch)','🐚',299)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="satyanarayan birthday shraddha">
+      <div class="product-img" style="background:#FFFEF0">
+        🍯
+        <span class="ceremony-tag">Multi-Puja</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Offerings</div>
+        <div class="product-name">Pure Cow Ghee</div>
+        <div class="product-name-bn">গাওয়া ঘি</div>
+        <div class="product-desc">500ml pure desi ghee, essential for homa and prasad.</div>
+        <div class="product-footer">
+          <div><span class="price">₹349</span><span class="price-old">₹399</span></div>
+          <button class="add-btn" onclick="addToCart(this,'Pure Cow Ghee 500ml','🍯',349)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPANAYANA -->
+    <div class="product-card" data-cat="upanayana">
+      <div class="product-img" style="background:#F5FFF5">
+        <span class="badge badge-new">New</span>
+        🧵
+        <span class="ceremony-tag">Upanayana</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Sacred Threads</div>
+        <div class="product-name">Janeu (Sacred Thread)</div>
+        <div class="product-name-bn">যজ্ঞোপবীত</div>
+        <div class="product-desc">Pack of 6 handspun cotton sacred threads (yagyopavit) for upanayana.</div>
+        <div class="product-footer">
+          <span class="price">₹89</span>
+          <button class="add-btn" onclick="addToCart(this,'Janeu Sacred Thread (6pc)','🧵',89)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="upanayana vivah">
+      <div class="product-img" style="background:#FFF8F0">
+        🏺
+        <span class="ceremony-tag">Upanayana · Vivah</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Ritual Kit</div>
+        <div class="product-name">Copper Kalash</div>
+        <div class="product-name-bn">তামার কলস</div>
+        <div class="product-desc">Pure copper pot with lid, used in griha pravesh, vivah & upanayana.</div>
+        <div class="product-footer">
+          <div><span class="price">₹449</span><span class="price-old">₹549</span></div>
+          <button class="add-btn" onclick="addToCart(this,'Copper Kalash','🏺',449)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIVAH -->
+    <div class="product-card" data-cat="vivah">
+      <div class="product-img" style="background:#FFF0F8">
+        <span class="badge badge-popular">Popular</span>
+        🌺
+        <span class="ceremony-tag">Vivah</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Flowers</div>
+        <div class="product-name">Marigold Garland</div>
+        <div class="product-name-bn">গাঁদা ফুলের মালা</div>
+        <div class="product-desc">6ft fresh marigold varmala, ideal for wedding exchange ceremony.</div>
+        <div class="product-footer">
+          <span class="price">₹199</span>
+          <button class="add-btn" onclick="addToCart(this,'Marigold Varmala','🌺',199)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="vivah">
+      <div class="product-img" style="background:#FFFBF0">
+        🔴
+        <span class="ceremony-tag">Vivah</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Sindoor & Cosmetics</div>
+        <div class="product-name">Sindoor Box Set</div>
+        <div class="product-name-bn">সিঁদুর বাক্স সেট</div>
+        <div class="product-desc">Pure vermillion in decorative silver box. Essential for Bengali vivah rituals.</div>
+        <div class="product-footer">
+          <div><span class="price">₹249</span><span class="price-old">₹299</span></div>
+          <button class="add-btn" onclick="addToCart(this,'Sindoor Box Set','🔴',249)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHRADDHA -->
+    <div class="product-card" data-cat="shraddha">
+      <div class="product-img" style="background:#F8F8F0">
+        🌾
+        <span class="ceremony-tag">Shraddha</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Offerings</div>
+        <div class="product-name">Til & Jau Kit</div>
+        <div class="product-name-bn">তিল ও যবের কিট</div>
+        <div class="product-desc">Black sesame + barley pack for tarpan and pind daan rituals.</div>
+        <div class="product-footer">
+          <span class="price">₹69</span>
+          <button class="add-btn" onclick="addToCart(this,'Til & Jau Shraddha Kit','🌾',69)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="shraddha satyanarayan">
+      <div class="product-img" style="background:#FFF5E8">
+        🍌
+        <span class="ceremony-tag">Shraddha · Puja</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Fruits & Prasad</div>
+        <div class="product-name">Plantain Banana Bunch</div>
+        <div class="product-name-bn">কাঁচকলার ছড়া</div>
+        <div class="product-desc">Fresh green plantain bananas, used in shraddha, satyanarayana & puja.</div>
+        <div class="product-footer">
+          <span class="price">₹49</span>
+          <button class="add-btn" onclick="addToCart(this,'Plantain Banana Bunch','🍌',49)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIRTHDAY -->
+    <div class="product-card" data-cat="birthday">
+      <div class="product-img" style="background:#FFF0F0">
+        <span class="badge badge-new">New</span>
+        🎂
+        <span class="ceremony-tag">Birthday Puja</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Birthday Puja Kit</div>
+        <div class="product-name">Janmadine Puja Kit</div>
+        <div class="product-name-bn">জন্মদিনের পূজার কিট</div>
+        <div class="product-desc">Complete kit: diya, flowers, agarbatti, sweets mould, roli, moli.</div>
+        <div class="product-footer">
+          <div><span class="price">₹399</span><span class="price-old">₹499</span></div>
+          <button class="add-btn" onclick="addToCart(this,'Janmadine Puja Kit','🎂',399)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANNAPRASHANA -->
+    <div class="product-card" data-cat="annaprashana">
+      <div class="product-img" style="background:#F5FFF8">
+        🍚
+        <span class="ceremony-tag">Annaprashana</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Annaprashana Kit</div>
+        <div class="product-name">Mukhe Bhaat Kit</div>
+        <div class="product-name-bn">মুখে ভাত কিট</div>
+        <div class="product-desc">Silver bowl, spoon, dhoti-saree set, narikol, paan — complete ceremony kit.</div>
+        <div class="product-footer">
+          <span class="price">₹799</span>
+          <button class="add-btn" onclick="addToCart(this,'Mukhe Bhaat Annaprashana Kit','🍚',799)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNIVERSAL -->
+    <div class="product-card" data-cat="durga satyanarayan upanayana vivah shraddha birthday annaprashana">
+      <div class="product-img" style="background:#FFFAF0">
+        <span class="badge badge-popular">Popular</span>
+        🌿
+        <span class="ceremony-tag">All Ceremonies</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Sacred Leaves</div>
+        <div class="product-name">Bel Patra Bundle</div>
+        <div class="product-name-bn">বেলপাতার গুচ্ছ</div>
+        <div class="product-desc">25 tri-leaflet bel patra, fresh. Essential for all Shaiva & general pujas.</div>
+        <div class="product-footer">
+          <span class="price">₹39</span>
+          <button class="add-btn" onclick="addToCart(this,'Bel Patra Bundle (25pc)','🌿',39)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="durga satyanarayan upanayana vivah shraddha birthday annaprashana">
+      <div class="product-img" style="background:#F8F5FF">
+        🕯️
+        <span class="ceremony-tag">All Ceremonies</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Incense</div>
+        <div class="product-name">Chandan Agarbatti</div>
+        <div class="product-name-bn">চন্দন আগরবাতি</div>
+        <div class="product-desc">Pure sandalwood incense sticks, 40 sticks. Suitable for all rituals.</div>
+        <div class="product-footer">
+          <div><span class="price">₹59</span><span class="price-old">₹75</span></div>
+          <button class="add-btn" onclick="addToCart(this,'Chandan Agarbatti','🕯️',59)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-icon">🪔</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- PROMO STRIP -->
+<div class="promo-strip">
+  <div>
+    <h2>Puja Season Special Offer</h2>
+    <p>Use code at checkout for 12% off on all ceremony kits & combos.</p>
+  </div>
+  <div class="promo-code">PUJA12</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-title">দশকর্ম ভাণ্ডার</div>
+  <p>Serving Kolkata's sacred traditions since 1978 · <span>Shyambazar, North Kolkata</span></p>
+  <p style="margin-top:.5rem">📞 +91 98300 XXXXX &nbsp;|&nbsp; 🕐 Open daily 7am – 9pm</p>
+</footer>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h2>🛕 আপনার কার্ট</h2>
+    <button class="close-btn" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <span class="empty-icon">🪔</span>
+      <p>Your cart is empty.<br>Add puja samagri to get started.</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="subtotalVal">₹0</span></div>
+    <div class="cart-subtotal" style="color:#9a7a5a;font-size:.85rem"><span>Delivery</span><span id="deliveryVal">₹0</span></div>
+    <div class="cart-total"><span>Total</span><span id="totalVal">₹0</span></div>
+    <button class="checkout-btn" onclick="alert('Checkout coming soon! 🙏')">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<script>
+  let cart = {};
+
+  function toggleCart() {
+    document.getElementById('cartDrawer').classList.toggle('open');
+    document.getElementById('overlay').classList.toggle('open');
+  }
+
+  function addToCart(btn, name, icon, price) {
+    if (!cart[name]) cart[name] = { icon, price, qty: 0 };
+    cart[name].qty++;
+    btn.textContent = '✓ Added';
+    btn.classList.add('added');
+    setTimeout(() => { btn.textContent = '+ Add'; btn.classList.remove('added'); }, 1300);
+    renderCart();
+    // briefly open cart
+    document.getElementById('cartDrawer').classList.add('open');
+    document.getElementById('overlay').classList.add('open');
+  }
+
+  function changeQty(name, delta) {
+    if (!cart[name]) return;
+    cart[name].qty += delta;
+    if (cart[name].qty <= 0) delete cart[name];
+    renderCart();
+  }
+
+  function removeItem(name) {
+    delete cart[name];
+    renderCart();
+  }
+
+  function renderCart() {
+    const keys = Object.keys(cart);
+    const countEl = document.getElementById('cartCount');
+    const itemsEl = document.getElementById('cartItems');
+    const footerEl = document.getElementById('cartFooter');
+    const subtotal = keys.reduce((s,k) => s + cart[k].price * cart[k].qty, 0);
+    const delivery = subtotal >= 999 ? 0 : 49;
+    const total = subtotal + delivery;
+    const totalQty = keys.reduce((s,k) => s + cart[k].qty, 0);
+
+    countEl.textContent = totalQty;
+    countEl.classList.toggle('show', totalQty > 0);
+
+    if (keys.length === 0) {
+      itemsEl.innerHTML = `<div class="cart-empty"><span class="empty-icon">🪔</span><p>Your cart is empty.<br>Add puja samagri to get started.</p></div>`;
+      footerEl.style.display = 'none';
+      return;
+    }
+
+    itemsEl.innerHTML = keys.map(name => {
+      const item = cart[name];
+      return `
+        <div class="cart-item">
+          <span class="cart-item-icon">${item.icon}</span>
+          <div class="cart-item-info">
+            <div class="cart-item-name">${name}</div>
+            <div class="cart-item-price">₹${item.price} × ${item.qty} = ₹${item.price * item.qty}</div>
+          </div>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="changeQty('${name.replace(/'/g,"\\'")}', -1)">−</button>
+            <span class="qty-num">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty('${name.replace(/'/g,"\\'")}', 1)">+</button>
+          </div>
+          <button class="remove-btn" onclick="removeItem('${name.replace(/'/g,"\\'")}')">🗑</button>
+        </div>`;
+    }).join('');
+
+    document.getElementById('subtotalVal').textContent = `₹${subtotal}`;
+    document.getElementById('deliveryVal').textContent = delivery === 0 ? '🎉 FREE' : `₹${delivery}`;
+    document.getElementById('totalVal').textContent = `₹${total}`;
+    footerEl.style.display = 'block';
+  }
+
+  function filterCat(cat, el) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('.product-card[data-cat]').forEach(card => {
+      if (cat === 'all') {
+        card.classList.remove('hidden');
+      } else {
+        const cats = card.dataset.cat.split(' ');
+        card.classList.toggle('hidden', !cats.includes(cat));
+      }
+    });
+  }
+</script>
+
+<!-- PWA Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('SW registered:', reg.scope))
+        .catch(err => console.log('SW failed:', err));
+    });
+  }
+
+  // Show install prompt (Android Chrome)
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById('installBanner').style.display = 'flex';
+  });
+
+  function installApp() {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(() => {
+        deferredPrompt = null;
+        document.getElementById('installBanner').style.display = 'none';
+      });
+    }
+  }
+
+  window.addEventListener('appinstalled', () => {
+    document.getElementById('installBanner').style.display = 'none';
+  });
+</script>
+</body>
+</html>
